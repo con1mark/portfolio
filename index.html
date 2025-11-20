@@ -1223,7 +1223,6 @@
                 <h3>Mobile</h3>
                 <div class="skill-list">
                     <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Java</span>
                     <span class="skill-tag">Android Studio</span>
                     <span class="skill-tag">Jetpack Compose</span>
                     <span class="skill-tag">Room DB</span>
@@ -1261,9 +1260,7 @@
                 <div class="skill-list">
                     <span class="skill-tag">UI/UX</span>
                     <span class="skill-tag">Responsive</span>
-                    <span class="skill-tag">Material Design</span>
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">Algorithms</span>
+                    <span class="skill-tag">Material Design</span>                        
                 </div>
             </div>
         </div>
@@ -1299,7 +1296,7 @@
                     <div class="contact-icon">🚀</div>
                     <div>
                         <h4>Specialization</h4>
-                        <p>Full Stack & Mobile Development</p>
+                        <p>Full Stack Development</p>
                     </div>
                 </div>
                 
@@ -1555,12 +1552,17 @@
                     <p class="project-description">${project.description}</p>
                     <div class="project-tech">${techTags}</div>
                     <div class="project-links">
-                        <a href="#" class="project-link" onclick="event.stopPropagation()">GitHub</a>
-                        <a href="#" class="project-link" onclick="event.stopPropagation()">Live Demo</a>
+                        <a href="${project.github || '#'}" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="${project.demo || '#'}" class="project-link" target="_blank" rel="noopener noreferrer">Live Demo</a>
                     </div>
                 `;
                 
-                card.addEventListener('click', () => openProjectModal(project));
+                card.addEventListener('click', (e) => {
+                    // Check if the click was on a link
+                    if (!e.target.classList.contains('project-link')) {
+                        openProjectModal(project);
+                    }
+                });
                 grid.appendChild(card);
             });
             
@@ -1745,5 +1747,6 @@
 </body>
 
 </html>
+
 
 
