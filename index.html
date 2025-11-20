@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debashis Gope - Full Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
@@ -1054,6 +1055,56 @@
             transform: translateX(60px);
         }
 
+        /* hero-sociallinks */
+        .hero-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-social-link {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 22px;
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-social-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.15);
+            box-shadow: 0 20px 48px rgba(0, 255, 136, 0.6), 0 0 0 8px rgba(0, 255, 136, 0.1);
+        }
+
+        .hero-social-link i {
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .hero-social-link:hover i {
+            color: var(--dark);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero-social {
+                justify-content: center;
+            }
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
@@ -1106,10 +1157,9 @@
                     Hi, I'm <span class="gradient-text">Debashis</span><br>
                     Full Stack Developer
                 </h1>
-                <p class="hero-subtitle">Web Developer & Android App Developer</p>
+                <p class="hero-subtitle">Building clean, responsive, and user-focused applications</p>
                 <p class="hero-description">
-                    I create exceptional digital experiences through clean code and innovative solutions. 
-                    Passionate about building scalable web applications and intuitive mobile apps.
+                    I build applications across the full stack—designing thoughtful interfaces, developing stable backend systems, and turning ideas into polished products that work seamlessly and solve real problems.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -1128,6 +1178,20 @@
                 <div class="hero-cta">
                     <a href="#projects" class="btn-primary">View My Work</a>
                     <a href="#contact" class="btn-secondary">Get In Touch</a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="hero-social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="hero-social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="hero-social-link" title="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
                 </div>
             </div>
             <div class="hero-right">
@@ -1156,12 +1220,12 @@
     <section id="about" class="section">
         <div class="section-header">
             <div class="section-label">About Me</div>
-            <h2>Building Digital Excellence</h2>
+            <h2>Behind the Code</h2>
             <p>
-                I'm a passionate full-stack developer with expertise in both web and mobile development. 
-                My journey in software engineering has led me to work with cutting-edge technologies 
-                and create solutions that make a real impact. I believe in writing clean, maintainable code 
-                and staying updated with the latest industry trends.
+                I’m a final-year Computer Science student who loves creating applications that solve real problems and feel good to use. 
+                I’ve worked with modern technologies across frontend, backend, and cloud, and I pick up new tools quickly. 
+                Whether it’s building dashboards, crafting small browser games, or experimenting with cloud services, I enjoy the process of learning and improving my craft. 
+                    Outside of coding, I like video editing, multimedia work, and exploring new ideas that blend creativity with technology.
             </p>
         </div>
     </section>
@@ -1195,7 +1259,7 @@
         <div class="skills-grid">
             <div class="skill-category">
                 <div class="skill-category-icon">💻</div>
-                <h3>Frontend</h3>
+                <h3>Frontend Development</h3>
                 <div class="skill-list">
                     <span class="skill-tag">HTML5</span>
                     <span class="skill-tag">CSS3</span>
@@ -1207,27 +1271,39 @@
             
             <div class="skill-category">
                 <div class="skill-category-icon">⚙️</div>
-                <h3>Backend</h3>
+                <h3>Backend Development</h3>
                 <div class="skill-list">
                     <span class="skill-tag">Node.js</span>
                     <span class="skill-tag">Express.js</span>
                     <span class="skill-tag">Python</span>
-                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">REST APIs</span>
                     <span class="skill-tag">JWT</span>
                     <span class="skill-tag">Ktor</span>
                 </div>
             </div>
-            
+
             <div class="skill-category">
+            <div class="skill-category-icon">☁️</div>
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-list">
+                <span class="skill-tag">AWS EC2</span>
+               <!-- <span class="skill-tag">AWS S3</span> -->
+                <span class="skill-tag">AWS VPC</span>
+                <!-- <span class="skill-tag">IAM</span> -->
+                <!-- <span class="skill-tag">CloudWatch</span> -->
+            </div>
+            </div>
+            
+            <!-- <div class="skill-category">
                 <div class="skill-category-icon">📱</div>
-                <h3>Mobile</h3>
+                <h3>Mobile Development</h3>
                 <div class="skill-list">
                     <span class="skill-tag">Kotlin</span>
                     <span class="skill-tag">Android Studio</span>
                     <span class="skill-tag">Jetpack Compose</span>
                     <span class="skill-tag">Room DB</span>
                 </div>
-            </div>
+            </div> -->
             
             <div class="skill-category">
                 <div class="skill-category-icon">🗄️</div>
@@ -1244,22 +1320,23 @@
             
             <div class="skill-category">
                 <div class="skill-category-icon">🛠️</div>
-                <h3>Tools</h3>
+                <h3>Tools and Platforms</h3>
                 <div class="skill-list">
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">GitHub</span>
                     <span class="skill-tag">Postman</span>
                     <span class="skill-tag">Firebase</span>
                     <span class="skill-tag">IntelliJ IDEA</span>
+                    <span class="skill-tag">VS Code</span>
                 </div>
             </div>
             
             <div class="skill-category">
                 <div class="skill-category-icon">🎨</div>
-                <h3>Design & Other</h3>
+                <h3>Design & Other Skills</h3>
                 <div class="skill-list">
-                    <span class="skill-tag">UI/UX</span>
-                    <span class="skill-tag">Responsive</span>
+                    <span class="skill-tag">UI/UX Principles</span>
+                    <span class="skill-tag">Responsive Design</span>
                     <span class="skill-tag">Material Design</span>                        
                 </div>
             </div>
@@ -1671,7 +1748,8 @@
                 .to('.hero-subtitle', { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.6")
                 .to('.hero-description', { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.5")
                 .to('.hero-stats', { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }, "-=0.5")
-                .to('.hero-cta', { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.4");
+                .to('.hero-cta', { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.4")
+                .to('.hero-social', { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.3");
             
             gsap.utils.toArray('.fade-in').forEach(element => {
                 gsap.fromTo(element, 
@@ -1747,6 +1825,7 @@
 </body>
 
 </html>
+
 
 
 
